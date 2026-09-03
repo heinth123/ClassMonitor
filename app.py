@@ -1,14 +1,15 @@
-from flask import Flask, send_from_directory
+from flask import Flask, send_from_directory, render_template
 
-app = Flask(__name__, static_folder='.')
+app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return send_from_directory('.', 'index.html')
+    return render_template('index.html')
 
-@app.route('/<path:path>')
-def serve_static(path):
-    return send_from_directory('.', path)
+# This catches requests for /models/ and pulls them straight from your 'model' folder!
+@app.route('/models/<path:filename>')
+def serve_models(filename):
+    return send_from_directory('model', filename)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
