@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web GTA Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Tutorial & Instructions UI -->
+    <div id="tutorial">
+        <h2>🚗 GTA Web Edition</h2>
+        <p id="instruction-text">Click screen to lock mouse. Use <b>WASD</b> to walk.<br>Find <b>oldstartcar1</b> and press <b>'F'</b> to drive!</p>
+    </div>
+
+    <!-- Three.js Import Map -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+      }
+    </script>
+    
+    <!-- Main Game Script -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
