@@ -1,12 +1,13 @@
-from flask import Flask, send_from_directory, render_template
+from flask import Flask, send_from_directory
 
 app = Flask(__name__)
 
+# This serves your main game page right from your root folder safely
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return send_from_directory('.', 'index.html')
 
-# This catches requests for /models/ and pulls them straight from your 'model' folder!
+# This maps /models/ requests straight to your 'model' folder
 @app.route('/models/<path:filename>')
 def serve_models(filename):
     return send_from_directory('model', filename)
