@@ -6,7 +6,7 @@ import requests
 # Replace 'your-app-name.onrender.com' with your actual Render URL!
 # =========================================================
 
-RENDER_URL = os.environ.get("RENDER_URL", "https://your-app-name.onrender.com")
+RENDER_URL = os.environ.get("RENDER_URL", "https://classmonitor-6sl6.onrender.com/")
 SERVER_URL = f"{RENDER_URL.rstrip('/')}/event"
 
 
